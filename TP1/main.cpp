@@ -59,3 +59,13 @@ int main() {
     return 0;
 }
 
+int iesimoDivisorPrimo (int n, int i) {
+    int j = 2;
+    if (cantidadPrimosManoresOIguales(n) < i) {
+        j = -1;
+    } else {
+        while (j <=n) {
+            if (esPrimo(j) && )
+        }
+    }
+}
