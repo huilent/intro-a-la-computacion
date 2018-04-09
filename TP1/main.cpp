@@ -53,19 +53,30 @@ int cantidadDivisoresPrimos (int n) {
     return i;
 }
 
-int main() {
+/*int main() {
     int resultado = cantidadDivisoresPrimos(9);
     cout << resultado;
     return 0;
-}
+}*/
 
 int iesimoDivisorPrimo (int n, int i) {
     int j = 2;
+    int m = 0;
     if (cantidadPrimosManoresOIguales(n) < i) {
-        j = -1;
+        j = 0;
     } else {
-        while (j <=n) {
-            if (esPrimo(j) && )
+        while (m < i) {
+            if (esPrimo(j) && n%j == 0){
+                m = m+1;
+            }
+        j = j+1;
         }
-    }
+    return j-1;
+} }
+
+int main() {
+        int resultado = iesimoDivisorPrimo(2,1);
+        cout << resultado;
+        return 0;
 }
+
