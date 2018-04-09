@@ -76,9 +76,29 @@ int iesimoDivisorPrimo (int n, int i) {
     }
 }
 
-int main() {
+/*int main() {
         int resultado = iesimoDivisorPrimo(30,4);
         cout << resultado;
         return 0;
+}*/
+
+int potenciaIesimoDivisorPrimo(int n, int i) {
+    int j = iesimoDivisorPrimo(n, i);
+    int m = 0;
+    if (cantidadDivisoresPrimos(n) < i) {
+        return -1;
+    } else {
+        while (n > 1 && n % j == 0) {
+            n = n / j;
+            m = m + 1;
+        }
+        return m;
+    }
+}
+
+int main() {
+    int resultado = potenciaIesimoDivisorPrimo(8,1);
+    cout << resultado;
+    return 0;
 }
 
