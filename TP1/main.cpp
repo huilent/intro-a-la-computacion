@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -96,9 +97,30 @@ int potenciaIesimoDivisorPrimo(int n, int i) {
     }
 }
 
-int main() {
+/*int main() {
     int resultado = potenciaIesimoDivisorPrimo(8,1);
     cout << resultado;
     return 0;
-}
+}*/
 
+int main(int cantidad, char** parametro) {
+    string operacion;
+    int n = atoi(parametro[2]);
+    operacion = parametro[1];
+    if (operacion == "esPrimo") {
+        cout << esPrimo(n) << endl;
+    }
+    else if (operacion == "productoria") {
+        cout << productoria(cantidad, caracter) << endl;
+    }
+    else if (operacion == "productoria") {
+            cout << productoria(cantidad, caracter) << endl;
+    }
+    else if (operacion == "productoria") {
+        cout << productoria(cantidad, caracter) << endl;
+    }
+    else if (operacion == "productoria") {
+        cout << productoria(cantidad, caracter) << endl;
+    }
+    return 0;
+}
