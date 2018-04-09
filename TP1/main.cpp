@@ -19,7 +19,7 @@ bool esPrimo(int n) {
     }
     return 0;
 }*/
-int cantidadPrimosManoresOIguales (int n) {
+int cantidadPrimosMenoresOIguales (int n) {
     int i = 2;
     int j = 0;
     while (i <= n) {
@@ -32,7 +32,7 @@ int cantidadPrimosManoresOIguales (int n) {
 }
 
 /*int main() {
-    int resultado = cantidadPrimosManoresOIguales(11);
+    int resultado = cantidadPrimosMenoresOIguales(11);
     cout << resultado;
     return 0;
 }
@@ -62,20 +62,22 @@ int cantidadDivisoresPrimos (int n) {
 int iesimoDivisorPrimo (int n, int i) {
     int j = 2;
     int m = 0;
-    if (cantidadPrimosManoresOIguales(n) < i) {
-        j = 0;
-    } else {
+    if (cantidadDivisoresPrimos(n) < i) {
+        return -1;
+    }
+    else {
         while (m < i) {
-            if (esPrimo(j) && n%j == 0){
-                m = m+1;
+            if (esPrimo(j) && n % j == 0) {
+                m = m + 1;
             }
-        j = j+1;
+            j = j + 1;
         }
-    return j-1;
-} }
+        return j - 1;
+    }
+}
 
 int main() {
-        int resultado = iesimoDivisorPrimo(2,1);
+        int resultado = iesimoDivisorPrimo(30,4);
         cout << resultado;
         return 0;
 }
