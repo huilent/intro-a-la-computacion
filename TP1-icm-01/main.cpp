@@ -4,6 +4,7 @@
 using namespace std;
 
 
+
 int RaizCuadrada (int n) {
     int i=1;
         while (i*i <= n) {
@@ -12,16 +13,21 @@ int RaizCuadrada (int n) {
     return (i-1);
 }
 
+/*
+Introducimos la función raiz cuadrada ya que hace un poco más eficiente la búsqueda de números primos:
+ si un número no tiene divisores primos menores o iguales a su raíz cuadrada,
+ entonces no tendrá ningún otro divisor primo (distinto de sí mismo).
+ */
 
 bool esPrimo (int n) {
     bool primo = true;
     int i = 2;
     if (n <= 1) {
-        return false;
+        primo = false;
     }
         while (i <= RaizCuadrada(n)) {
             if (n%i == 0) {
-                return false;
+                primo = false;
             }
             i=i+1;
         }
@@ -52,6 +58,12 @@ int cantidadDivisoresPrimos (int n) {
     return cantidad;
 }
 
+/*
+ El caso en el que n es primo, y por lo tanto tiene un único divisor primo,
+ no lo estamos considerando aparte, ya que durante el 'if' se vuelve a verificar si n es primo,
+ en caso afirmativo, la 'cantidad' quedará igual a 1.
+ */
+
 int iesimoDivisorPrimo (int n, int i) {
     if (cantidadDivisoresPrimos(n) >= i) {
         int cantidad = 0;
@@ -71,13 +83,13 @@ int iesimoDivisorPrimo (int n, int i) {
 int potenciaIesimoDivisorPrimo (int n, int i) {
     int k = iesimoDivisorPrimo(n, i);
     int j = n;
-    int aux = 0;
+    int potencia = 0;
     if (k != -1) {
         while (j % k == 0) {
             j = j / k;
-            aux = aux + 1;
+            potencia = potencia + 1;
         }
-        return aux;
+        return potencia;
     }
     else
         return -1;
